@@ -33,26 +33,29 @@
 // console.log(person1["firstname"]);
 // console.log(person1[1]);
 
+//OBJECTS  
 const persons = [
      {
 firstname:"akash",
 age:21,
 metadata:{
     yob:2022,
-    class:12
-}
+    class:12,
+    arr: [4,3,2,1,0],
+    hobbies: ["reading", "coding", "hiking"]
+    }
 },
 {
     firstname:"ahmad",
     age:22,
     metadata:{
         yob:2021,
-        class:13
+        class:13,
+        arr: [4,3,2,1] // array inside a object
     }
 }
 ]
-
-// console.log(persons);
+console.log(persons[1].metadata.arr[1]);
 // console.log(persons[1]);
-console.log(persons[1].firstname);
-console.log(persons[1].metadata.class);
+// console.log(persons[1].firstname);
+// console.log(persons[1].metadata.class);
