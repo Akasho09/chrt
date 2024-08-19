@@ -34,25 +34,25 @@ let a=18;
 
 //CALLBACK FUNCTION
 
-function Arithmetics (num1,num2, functocall){
-let result = functocall(num1,num2);
-};
+// function Arithmetics (num1,num2, functocall){
+// let result = functocall(num1,num2);
+// };
 
-function sum (num1,num2){
-    console.log(num1+num2)
-}
-
-function sub (num1,num2){
-    console.log(num1-num2)
-}
-
-Arithmetics(90,80,sub);
-console.log(Arithmetics(80,90,sum)); //undefined
-console.log( console.log("akash"));  //undefined
-
-// function greet (){
-//     console.log("hello ji");
+// function sum (num1,num2){
+//     console.log(num1+num2)
 // }
 
-// setTimeout(greet,2*1000);
-// setTimeout (function greet (){ console.log("hello ji"); } ,3*1000);
+// function sub (num1,num2){
+//     console.log(num1-num2)
+// }
+
+// Arithmetics(90,80,sub);
+// console.log(Arithmetics(80,90,sum)); //undefined
+// console.log( console.log("akash"));  //undefined
+
+function greet (){
+    console.log("hello ji ");
+}
+
+setTimeout(greet,2*1000);
+setTimeout (function greet2 () { console.log("hello ji"); } ,3*1000);
