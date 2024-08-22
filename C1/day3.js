@@ -1,5 +1,5 @@
-/*
-JavaScript strings are also immutable.
+/*  JAVASCRIPT STRINGS 
+are immutable.
  This means that once a string is created, 
  its value cannot be changed directly.
 */
@@ -52,14 +52,14 @@ console.log(str.split(" "));
 console.log(str.split(","));
 
 
-  // trim
+  // trim -->str.trim()  // trims extra spaces at start ans end
 function trimString(str) {
     console.log("Original String:", str);
     console.log("After trim:", str.trim());
   }
-  trimString(" Hello World ");
+  trimString("    Hello    World    "); 
   
-  // toUpperCase
+  // toUpperCase--->str.toUpperCase()
   function toUpper(str) {
     console.log("Original String:", str);
     console.log("After toUpperCase:", str.toUpperCase());
@@ -72,3 +72,21 @@ function trimString(str) {
     console.log("After toLowerCase:", str.toLowerCase());
   }
   toLower("Hello World");
+
+
+// PARSEINT --> parseint("string") -->anything to number
+// GLOBAL FUNCTION  not a method
+
+  // Example Usage for parseInt
+  console.log(parseInt("42"));
+  console.log(parseInt("3.14"));
+  console.log(parseInt(3.14));
+  console.log(parseInt(16));
+  console.log(parseInt("42px"));
+  console.log(parseInt("px42"));
+  console.log(parseInt("px"));
+  console.log(parseInt("ab",16)); //Hexadecimal to int
+  console.log(parseFloat("3.14"));
+  console.log(parseFloat("3.14xd"));
+  console.log(parseFloat("3a.14"));
+  console.log(parseFloat("3.a14"));
