@@ -7,7 +7,9 @@ console.log(i); //i==10
 console.log("\n");
 
 // A CALLBACK is a function passed as an argument to another function.
-// solves DRY of functions.
+// solves Don't Repeat Yourself (DRY) of functions.
+//e.g myCalculator(5, 5, myDisplayer);
+
 function square (a) {
     return a*a;
 }

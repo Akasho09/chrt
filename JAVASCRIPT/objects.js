@@ -59,3 +59,25 @@ console.log(persons[1].metadata.arr[1]);
 // console.log(persons[1]);
 // console.log(persons[1].firstname);
 // console.log(persons[1].metadata.class);
+
+const person = {};
+
+// Add Properties
+person.firstName = "John";
+person.lastName = "Doe";
+person.age = 50;
+person.eyeColor = "blue";
+
+console.log(person);
+
+// Create an Object
+const person2 = new Object()
+{
+// Add Properties
+person.firstName = "John";
+person.lastName = "Doe";
+person.age = 50;
+person.eyeColor = "blue";
+}
+
+console.log(person2); // {}
