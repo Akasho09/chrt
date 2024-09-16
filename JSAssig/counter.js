@@ -22,7 +22,6 @@ for (let i=0;i<n;i++){
     a++;
 }
 }
-
 // calculatetimedifference(bigtimef,100);
 // calculatetimedifference(bigtimef,1000);
 // calculatetimedifference(bigtimef,10000);
@@ -34,13 +33,55 @@ for (let i=0;i<n;i++){
 // calculatetimedifference(bigtimef,10000000000);
 
 
+// COUNTDOWN using settimeout 
+// function COUNTDOWN(n){
+//     console.clear();
+//     console.log(n);
+// }
 
-// COUNTDOWN
+// const n=15;
+// for (let i=n;i>0;i--){
+// setTimeout(function(){
+//     COUNTDOWN(i);
+// },1000-i*1000+n*1000);   
+// }
+
+
+// COUNTDOWN using setinterval
 function COUNTDOWN(n){
-   let b= n+1-new Date().getSeconds()+t;
-   if(b>0)
-    console.log(b);
-}
-let t = new Date().getSeconds();
-setInterval(COUNTDOWN,1000,15);
-// setInterval(COUNTDOWN,1000,60);
+       let b= n-new Date().getSeconds()+t+1;
+       if(b>=0)
+       { 
+        console.clear();
+        console.log(b); 
+       }
+       else
+       {
+        clearInterval(id);
+       }
+    }
+    let t = new Date().getSeconds();
+    let n=15;
+    let id=setInterval(function (){
+        COUNTDOWN(n);
+    },1000);
+
+
+
+    // setInterval(() => {
+    //     console.clear();
+    //     console.log(new Date().toLocaleTimeString());
+    //   }, 1000);
+
+
+    // //calling function itself 
+    //   const timer = () => {
+    //     console.clear();
+    //     console.log(new Date().toLocaleTimeString())
+    //     setTimeout(timer,1000)
+    // };
+    
+    // timer();
+
+
+
