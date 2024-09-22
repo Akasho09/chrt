@@ -1,0 +1,36 @@
+# npm init -y 
+The npm init -y command is a quick way to initialize a new Node.js project with default values. When you run this command in your project folder, it automatically creates a package.json file with the following default settings:
+
+"name": The name of the project (default is the folder name)
+"version": The project version (default is 1.0.0)
+"description": An empty string by default
+"main": The entry point file (default is index.js)
+"scripts": An empty object for defining custom npm scripts
+"keywords": An empty array for project keywords
+"author": Empty by default
+"license": Default is "ISC"
+
+# npm install express
+Running the command npm install express installs the Express.js framework in your Node.js project. 
+This command adds Express as a dependency in your package.json file and downloads it into the node_modules folder of your project. 
+Express is a fast, unopinionated web framework for Node.js, commonly used for building web applications and APIs.
+
+After this, your package.json file will be updated to include Express as a dependency, and you'll see something like:
+"dependencies": {
+  "express": "^4.18.0"  // or latest version available
+}
+const express = require('express');
+files created are => node_modules folder and package-lock.json
+
+http://localhost:3000/
+ipconfig getifaddr en0
+http://10.27.3.38:3000/ on mobile
+
+
+npm install body-parser
+const bodyparser=require('body-parser');
+app.use(bodyparser.json());
+
+
+npm install nodemon
+"nodemon": "^3.1.7"

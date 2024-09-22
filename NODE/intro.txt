@@ -1,0 +1,28 @@
+"ECMAScript" 
+is a scripting language specification on which JavaScript is based. 
+Ecma International is in charge of standardizing ECMAScript.
+
+'JavaScript'
+JavaScript is the programming language of the Web , implementation of ECMAScript.
+
+"NODE-JS"
+Node.js is a runtime environment that allows JavaScript to be executed on the server side.
+
+"BUN"--NODE.JS competator --significantly faster than NodeJS
+Bun is written in Zig, a low-level programming language, 
+and uses the JavaScriptCore engine (the same engine used in Safari) instead of V8.
+
+"Node JS Uses" 
+1. create command line interface.
+2. create video player.
+3. create games.
+4. create HTTP Servers.
+
+"Hypertext Transfer Protocol (HTTP)"
+is an application-layer protocol for transmitting hypermedia documents, such as HTML. 
+It was designed for communication between web browsers and web servers on WWW, but it can also be used for other purposes.
+
+"HTTP Servers."
+The HTTP module can create an HTTP server that listens to server ports and gives a response back to the client.
+
+# HTTPS-HTTP secure
