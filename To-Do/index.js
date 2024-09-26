@@ -119,7 +119,7 @@ app.get("/gettodos", authcheck , (req, res) => {
       console.log(data);
     }
     res.send(data);
-  } 
+ } 
 );
 
 //global catch 4 inputs
