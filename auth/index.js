@@ -26,7 +26,7 @@ const allusers = [
 const validPass = zod.string()
 .min(8 ,{ message : "Password length must be 8 minimum"})
 .startsWith("A" , {message : " First letter must be Capital "})
-.refine((value) =>{/} )
+// .refine((value) =>{/} )
 
 
 function userexists (user,passw){
