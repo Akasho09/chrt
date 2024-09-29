@@ -1,36 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<script>
-
+  </head>
+  <script>
     // promises synatx to fetch api call
-    function getlist(){
-        // console.log("getlist called")
-        // alert("couldnt call list")
-        const response = fetch("https://fakerapi.it/api/v1/persons")
-        .then(function(response){
-             response.json()
-           .then(function (d){
+    function getlist() {
+      // console.log("getlist called")
+      // alert("couldnt call list")
+      const response = fetch("https://fakerapi.it/api/v1/persons").then(
+        function (response) {
+          response.json().then(function (d) {
             console.log(d.data);
-           })
-        })
-}
-
-// async await fetch api call
-    async function getlist2() {
-       const response = await fetch("https://fakerapi.it/api/v1/persons")
-         const finaldata = await response.json()
-         console.log(finaldata);
-
+          });
+        }
+      );
     }
-</script>
-<body>
-    <button onclick="getlist()"> getlist </button>
-    <button onclick="getlist2()"> getlist2 </button>
 
-</body>
+    // async await fetch api call
+    async function getlist2() {
+      const response = await fetch("https://fakerapi.it/api/v1/persons");
+      const finaldata = await response.json(); // i,e data is json form
+      console.log(finaldata.data);
+      document.getElementById("1").innerHTML= JSON.stringify(finaldata.data);
+    }
+    // getlist2() ;
+  </script>
+  <body>
+    <button onclick="getlist()">getlist</button>
+    <button onclick="getlist2()">getlist2</button>
+    <div id="1">
+        1
+    </div>
+ </body>
 </html>
