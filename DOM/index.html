@@ -3,67 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sum</title>
+    <title>Document</title>
 </head>
 <script>
-// function calsum(){
-// const element = document.getElementById("finalsum");
-// const a= document.getElementById("num1").value;
-// const b= document.getElementById("num2").value;
-// console.log(element);
-// console.log(typeof(a)); //string 
-// element.innerHTML="Sum : " + (parseInt(a)+parseInt(b));
+    var count=0;
+    function markasdone(count) {
+    const donediv= document.getElementById(count);
+    console.log(donediv);
+    donediv[3].innerHTML= "DONE";
+    }
+
+    function addchild(taskname,timeby,description,count) {
+    const childdiv=document.createElement("div");
+    const div1=document.createElement("div");
+    div1.innerHTML=`Task Number : ${count} <br>
+    Taskname : ${taskname} <br> `
+    const div2=document.createElement("div");
+    div2.innerHTML=`
+        Get Done by : ${timeby} <br>
+    `
+    const div3=document.createElement("div");
+    div3.innerHTML=`
+    Description : ${description} <br>
+    `
+
+    const div4=document.createElement("button");
+    div4.innerHTML=`
+    <button> Mark as done </button> <br>
+    `
+    div4.setAttribute("onclick" , `markasdone(${count})`);
+
+    childdiv.appendChild(div1);
+    childdiv.appendChild(div2);
+    childdiv.appendChild(div3);
+    childdiv.appendChild(div4);
+return childdiv;
+    }
+
+    function addtodo() {
+        const taskname=document.getElementById("taskname").value;
+        const timeby=document.getElementById("timeby").value;
+        const description=document.getElementById("description").value;
+        const divv=document.getElementById("container");
+        // const childdev = document.createElement("div");
+        // childdev.setAttribute("id" , ++count);
+        divv.appendChild(addchild(taskname,timeby,description,count));
+        // childdev.innerHTML=
+        //    ` <b>Taskname : </b> ${taskname} <br>
+        //      <b>Get done by : </b> ${timeby} <br>
+        //      <b id="d">Description : </b> ${description} <br>
+        //      <button onclick=${markasdone(count)}> Mark as done </button> <br><br>
+        //    `
+        //    divv.appendChild(childdev);
+        // console.log(taskname,timeby,description ,count);
+// const obj = {
+//     "Taskname " : taskname,
+//     "Get done by " :timeby,
+//     "Description " :description
 // }
-
-async function getnuminfo() {
-const divv= document.getElementById("info");
-const a= document.getElementById("num1").value;
-await fetch ( `http://numbersapi.com/${a}/math`).then(
-    async function(response){
-        const data=await response.text();
-divv.innerText= data;
-    })
-}
-
-async function getdateinfo() {
-    const divv2= document.getElementById("dateinfo");
-    const a= document.getElementById("date1").value;
-console.log(a);
-let dateObj = new Date(a);
-let day = dateObj.getDate();
-console.log(day);
-let month= dateObj.getMonth();
-await fetch(`http://numbersapi.com/${day}/${month}/date`)
-.then(
-async function(data){
-const data2=await data.text()
-divv2.innerText= data2;
-
+//         divv.innerText+=  "Taskname : " + taskname + "\nGet done by " + timeby + "\nDescription " + description +"\n\n"
     }
-)
-
-}
 </script>
-<style>
-    .num{
-        background-color: black;
-        color: white;
-    }
-</style>
 <body>
-   <input type="number" placeholder="GETNUMINFO" class="num" id="num1" onchange="getnuminfo()"><br>
-   <!-- <input type="number" placeholder="Num2" class="num" id="num2" onchange="calsum()"><br> -->
-   <!-- <button class="num" onclick="calsum()">Calc Sum</button><br>
-   <dIV id="finalsum">
-    Result : 
-   </dIV> -->
-   <div id="info">
-    info
-   </div>
-   <input type="date" placeholder="GETDATEINFO" class="DATE" id="date1" onchange="getdateinfo()"><br>
-   <div id="dateinfo">
-    info
-   </div>
+    <input type="text" placeholder="Task name" id="taskname"><br>
+    <input type="number" placeholder="Time by " id="timeby"><br>
+    <input type="text" placeholder="Description" id="description"><br>
+    <button onclick="addtodo()">ADD TODO</button>
+    <div id="container"> TODOs : <br> </div>
 </body>
-<script ></script>
 </html>

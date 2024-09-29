@@ -1,0 +1,8 @@
+"React" is a JavaScript library for building user interfaces.
+React is used to build single-page applications.
+React allows us to create reusable UI components.
+# Basically , it calulates diff between initial & final , then updates.
+
+npm create vite@latest
+npm install
+npm run dev
