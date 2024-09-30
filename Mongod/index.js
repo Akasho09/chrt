@@ -8,7 +8,7 @@ mongoose.connect(
   "mongodb+srv://akash:sJazfPDF1ZOHB6C2@cluster0.ku3wj.mongodb.net/akash",
 );
 
-//model for user object 
+//model for users collection  
 const user = mongoose.model( 'users'  ,{name : String , email : String , Password : String} );
 
 //create a new user
