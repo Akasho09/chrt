@@ -1,4 +1,4 @@
-const {admin} = require ("../db")
+const { admin } = require ("../db")
 
 function adminmiddleware(req,res,next) {
         const username = req.body.username;

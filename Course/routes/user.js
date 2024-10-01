@@ -1,8 +1,8 @@
 const express = require('express');
 const usermiddleware = require('../middlewares/user.js');
 const router = express.Router();
-const {user}= require("../db")
-const {courses}=require("../db")
+const {user ,courses}= require("../db")
+const { default: mongoose } = require('mongoose');
 
 router.post('/signup', (req,res)=> {
 const username = req.body.username;
@@ -30,23 +30,55 @@ newuser.save().then(()=>{
 })
 })
 
-// - POST /users/courses/:courseId
-//   Description: Purchases a course. courseId in the URL path should 
-// be replaced with the ID of the course to be purchased.
-//   Input: Headers: { 'username': 'username', 'password': 'password' }
-//   Output: { message: 'Course purchased successfully' }
-router.post('/courses' ,usermiddleware, (req,res)=> {
 
-
-
+router.post('/courses' ,usermiddleware, async (req,res)=> {
+   const  courseId = req.query.courseId; //:cid ?cid=>query
+   const cn = await courses.findOne({
+    _id:courseId
+   })
+   console.log(cn)
+   const username= req.body.username;
+   try {
+   await user.updateOne({
+    username:username
+   },{
+        "$push" : {
+            purchasedcourses : courseId
+    }
+   })
+   }
+   catch(e){
+    console.log(e)
+   }
+   res.send( " Course " + cn.coursename + " with CourseId " + courseId + " and price " +cn.price + " Purchased Sucessfully " );
 })
-// - GET /users/courses
-//   Description: Lists all the courses.
-//   Input: Headers: { 'username': 'username', 'password': 'password' }
-//   Output: { courses: [ { id: 1, title: 'course title', description: 
-// 'course description', price: 100, imageLink: 'https://linktoimage.com', published: true }, ... ] }
 
-router.get('/courses', (req,res)=> {
+router.get('/courses' , (req,res)=> {
+    courses.find({})
+    .then((response)=>{
+res.json (
+    {
+        courses : response
+    }
+)
+    })
 })
+
+router.get('/info' , usermiddleware , async (req,res)=> {
+const username =await user.findOne({
+    username:req.body.username
+});
+console.log(username.purchasedcourses)
+
+const coursesenrolled = await courses.find({
+_id:username.purchasedcourses
+})
+
+res.json( {
+    "courses you are enrollef in are " : coursesenrolled
+})
+})
+
+
 
 module.exports = router;

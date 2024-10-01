@@ -28,12 +28,12 @@ const CourseSchema= new mongoose.Schema( {
 })
 
 // creating collections , collections created will be admins ,users and courses --extra s,es 
-const adminx = mongoose.model('Admin', adminschema);
+const admin = mongoose.model('Admin', adminschema);
 const user = mongoose.model('User', userschema);
 const courses = mongoose.model('Course', CourseSchema);
 
 module.exports = {
-    adminx,
+    admin,
     user,
     courses
 }
