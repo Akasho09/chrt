@@ -1,0 +1,10 @@
+## 
+"State" is an object that holds data that can change over the lifetime of a component. 
+React tracks this data internally, and when the state changes, it triggers a re-render of the component.
+The state is local to the component and can only be updated by that component (although state can be passed down as props to child components).
+
+# Re-rendering in react
+It happens when
+A state variable that is being used inside a component changes
+A parent component re-render triggers all children re-rendering.
+
