@@ -4,5 +4,7 @@ React allows us to create reusable UI components.
 # Basically , it calulates diff between initial & final , then updates.
 
 npm create vite@latest
-npm install
-npm run dev
+npm install  --> installs all dependencies in p.json
+cd frontend
+npm run dev  
+npm run build
