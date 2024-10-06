@@ -1,9 +1,7 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 
-// // FIRST SNIPPET
+// // FIRST SNIPPET => All elements are rerendered again
 // function App() {
 //   const [title,setTitle] =useState("This is to generate random number , initially = 3 ")
 //   // Declare a state variable  "title" initialized to This is to generate random number , initially = 3 
@@ -34,7 +32,7 @@ import './App.css'
 // export default App
 
 
-// // 2ND 
+// // 2ND => only Manupilated part is rerenderd again and again
 // function App() {
 //   return (
 // <>
@@ -69,7 +67,7 @@ import './App.css'
 // }
 
 
-//Using React Memo
+//Using React Memo  => Manuplated part and  app as a whole is rerendered again and again
 import {memo} from "react";
 
 function App() {
